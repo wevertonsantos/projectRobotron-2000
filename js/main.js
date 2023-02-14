@@ -36,6 +36,28 @@ const pecas = {
 }
 const estatisticas = document.querySelectorAll('[data-estatistica')
 
+    // constants robotron img, colors robotron
+
+const robotron = document.getElementById('robotron')
+const colorsRobotron = {
+    "amarelo": {
+        "img": src="img/robotronamarelo.png"
+    },
+    "preto": {
+        "img": src="img/robotronpreto.png"
+    },
+    "azul": {
+        "img": src="img/robotronazul.png"
+    },
+    "rosa": {
+        "img": src="img/robotronrosa.png"
+    },
+    "vermelho": {
+        "img": src="img/robotronvermelho.png"
+    }
+}
+
+
 	// event forEach click
 
 controle.forEach((elemento) => {
@@ -58,8 +80,25 @@ function manipulaDados(operacao, controle){
 	}
 }
 
+// function update statistics
+
 function atualizaEstatisticas(peca){
 	estatisticas.forEach((elemento) => {
 		elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatistica]
 	})
+}
+
+// update robotron color
+
+robotron.addEventListener('click', () => {
+    // alterarCorRobotron(this.src, colorsRobotron.amarelo.img)
+    console.log(this.src)
+})
+
+// colorsRobotron.forEach((elemento) => {
+
+// })
+
+function alterarCorRobotron(objeto, caminhoImagem){
+    document.getElementById(objeto).src = caminhoImagem;
 }
