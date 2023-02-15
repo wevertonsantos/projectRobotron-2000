@@ -39,16 +39,8 @@ const estatisticas = document.querySelectorAll('[data-estatistica')
     // constants robotron img, colors robotron
 
 const robotron = document.getElementById('robotron')
-const colorsRobotron = [
-    "img/robotronamarelo.png",
-    "img/robotronpreto.png",
-    "img/robotronazul.png",
-    "img/robotronrosa.png",
-    "img/robotronvermelho.png"
-]
-
-
-
+const robotronAtual = 'img/robotronbranco.png'
+robotron.setAttribute('src', robotronAtual)
 
 	// event forEach click
 
@@ -80,11 +72,9 @@ function atualizaEstatisticas(peca){
 	})
 }
 
-
 // update robotron color
 
- robotron.addEventListener('click', () => {
-        colorsRobotron.forEach((img) => {
-        this.robotron.setAttribute('src', img)
-    })
-})
+function trocaImagem(cor){
+   document.querySelector(".robo").src="img/robotron" + cor + ".png";
+}
+
